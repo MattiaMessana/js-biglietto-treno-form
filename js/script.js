@@ -12,6 +12,13 @@ sendBtnElem.addEventListener("click", function() {
 
     // RACCOLTA DATI 
 
+        //NOME UTENTE
+        const userInputElem = document.getElementById("username"); // object | null
+        console.log(userInputElem);
+
+        const nameValue = userInputElem.value; //string
+        console.log(nameValue, typeof nameValue);
+
         //ETA' UTENTE 
         const ageInputElem = document.getElementById("userage"); // object | null
         console.log(ageInputElem);
@@ -52,22 +59,10 @@ sendBtnElem.addEventListener("click", function() {
           console.log("prezzo finale", finalPrice);
 
           //OUTPUT
-          const resultTicket = `
-          <dl>
-            <dt>Prezzo base</dt>
-            <dd>€ ${basePrice.toFixed(2) /* string */}</dd>
-        
-            <dt>Sconto</dt>
-            <dd>${discount /* number */} % (€ ${totalDiscount.toFixed(2)})</dd>
-        
-            <dt>Prezzo finale</dt>
-            <dd>€ ${finalPrice.toFixed(2) /* string */}</dd>
-          </dl>
-        `;
-        
-          console.log(resultMessage);
-        
-          document.getElementById("result").innerHTML = resultTicket;
+          document.getElementById("passenger").innerHTML = nameValue;
+          document.getElementById("price").innerHTML = basePrice.toFixed(2);
+          document.getElementById("d").innerHTML = discount;
+          document.getElementById("finalprice").innerHTML = finalPrice.toFixed(2);
           
 }
         else {
